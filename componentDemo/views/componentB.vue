@@ -19,6 +19,7 @@ export default {
     methods:{
         addNumber(number) {
             this.number = number;
+            this.$bus.emit('number2chg', this.number);
         }
     },
     beforeDestroy() {
