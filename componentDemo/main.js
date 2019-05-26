@@ -3,12 +3,14 @@ import VueRouter from 'vue-router';
 import Vuex from 'Vuex';
 import App from './app.vue';
 import iComponent from './iComponent';
+import vueBus from './utils/vueBus';
 import iView from 'iview';
 import 'iview/dist/styles/iview.css'; 
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
 Vue.use(iComponent);
+Vue.use(vueBus);
 Vue.use(iView);
 
 // 路由配置

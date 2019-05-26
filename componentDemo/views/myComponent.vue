@@ -1,7 +1,7 @@
 <template>
     <div>
         <hr>
-        <span>子组件1</span>
+        <span>子组件1 - 父组件向子组件通信props</span>
         <div>{{msg}}</div>
         <br>
         <Input v-model="msg"></Input>
@@ -34,4 +34,4 @@ export default {
         }
     }
 }
-</script>
+</script>

@@ -12,18 +12,29 @@
         <span>以上父组件</span>
         <!-- <myComponent></myComponent> -->
         <!-- <myComponent></myComponent> -->
-        <!-- 父组件向子组件通信，通过props传递数据 -->
+        <!-- 1.父组件向子组件通信，通过props传递数据 -->
         <!-- <myComponent message="abcde"></myComponent> -->
-        <myComponent :message="data"></myComponent>
+        <!-- <myComponent :message="data"></myComponent> -->
+        <!-- 2.1 子组件向父组件通信，通过emit自定义或原生事件，父组件中v-on：或@来接收 -->
+        <!-- <emitComponent :message="data" @msgChg="msgChg"></emitComponent> -->
+        <!-- 2.2 子组件向父组件通信，通过emit input事件，父组件中v-model来接收，直接修改父组件的变量 -->
+        <!-- <emitComponent :counter="counter" v-model="counter" :message="data" @msgChg="msgChg"></emitComponent> -->
+        <!-- 3.事件总线 -->
+        <componentA></componentA>
+        <hr>
+        <componentB></componentB>
         <span>以下父组件</span>
-        <Input v-model="data"></Input>
+        <br>
+        data:<Input v-model="data"></Input>
+        counter:<Input v-model="counter"></Input>
     </div>
 </template>
 <script>
     export default {
         data(){
             return {
-                data: '123'
+                data: '123',
+                counter: 0
             }
         },
         methods: {
@@ -41,6 +52,9 @@
                     'type': 'increment10',
                     'count': 10
                 })
+            },
+            msgChg(msg) {
+                this.data = msg;
             }
         },
         computed:{

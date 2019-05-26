@@ -1,4 +1,7 @@
-import myComponent from './views/myComponent.vue'
+import myComponent from './views/myComponent.vue';
+import emitComponent from './views/emitComponent.vue';
+import componentA from './views/componentA.vue';
+import componentB from './views/componentB.vue';
 
 // 写法一
 // const iComponent = {
@@ -12,6 +15,9 @@ function iComponent(Vue) {
         return;
     }
     Vue.component('myComponent', myComponent);
+    Vue.component('emitComponent', emitComponent);
+    Vue.component('componentA', componentA);
+    Vue.component('componentB', componentB);
 }
 
 export default iComponent;
