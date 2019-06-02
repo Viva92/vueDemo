@@ -9,6 +9,7 @@
         <router-link to="/about">跳转到 about</router-link>
         {{list}}
         {{listCount}}
+        <br>
         <span>以上父组件</span>
         <!-- <myComponent></myComponent> -->
         <!-- <myComponent></myComponent> -->
@@ -20,9 +21,28 @@
         <!-- 2.2 子组件向父组件通信，通过emit input事件，父组件中v-model来接收，直接修改父组件的变量 -->
         <!-- <emitComponent :counter="counter" v-model="counter" :message="data" @msgChg="msgChg"></emitComponent> -->
         <!-- 3.事件总线 -->
-        <componentA></componentA>
+        <!-- <componentA></componentA>
         <hr>
-        <componentB></componentB>
+        <componentB></componentB> -->
+        <!-- 4.1 单个slot -->
+        <!-- <sComponent>
+            <span>父组件定义了一些文本</span>
+        </sComponent> -->
+        <!-- 4.2具名slot -->
+        <!-- <nsComponent>
+            <h4 slot="header">标题</h4>
+            <span>正文</span>
+            <div slot="footer">
+                底部信息
+            </div>
+        </nsComponent> -->
+        <!-- 4.3作用域slot -->
+        <scComponent>
+            <template slot-scope="props">
+                <p>来自父组件的消息</p>
+                {{props.msg}}
+            </template>
+        </scComponent>
         <span>以下父组件</span>
         <br>
         data:<Input v-model="data"></Input>
