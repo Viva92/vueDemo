@@ -5,6 +5,7 @@ import componentB from './views/componentB.vue';
 import sComponent from './views/slotComponent.vue';
 import nsComponent from './views/namedSlotComponent.vue';
 import scComponent from './views/scopedSlotComponent.vue';
+import childComponent from './views/childComponent.vue';
 
 // 写法一
 // const iComponent = {
@@ -24,6 +25,7 @@ function iComponent(Vue) {
     Vue.component('sComponent', sComponent);
     Vue.component('nsComponent', nsComponent);
     Vue.component('scComponent', scComponent);
+    Vue.component('childComponent', childComponent);
 }
 
 export default iComponent;

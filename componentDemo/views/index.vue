@@ -37,12 +37,14 @@
             </div>
         </nsComponent> -->
         <!-- 4.3作用域slot -->
-        <scComponent>
+        <!-- <scComponent>
             <template slot-scope="props">
                 <p>来自父组件的消息</p>
                 {{props.msg}}
             </template>
-        </scComponent>
+        </scComponent> -->
+        <!-- 5.递归组件 -->
+        <childComponent :count="0"></childComponent>
         <span>以下父组件</span>
         <br>
         data:<Input v-model="data"></Input>
